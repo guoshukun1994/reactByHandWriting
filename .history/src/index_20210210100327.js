@@ -1,7 +1,6 @@
-// import ReactDOM from 'react-dom';
-// import React, { Component } from 'react';   // 类组件需要用到
-import ReactDOM from './kreact/react-dom';
-import Component from './kreact/Component';
+import ReactDOM from 'react-dom';
+import React, { Component } from 'react';   // 类组件需要用到
+// import ReactDOM from './kreact/react-dom';
 import './index.css';
 
 // 函数组件02

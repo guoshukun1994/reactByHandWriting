@@ -1,7 +1,5 @@
 // import ReactDOM from 'react-dom';
-// import React, { Component } from 'react';   // 类组件需要用到
 import ReactDOM from './kreact/react-dom';
-import Component from './kreact/Component';
 import './index.css';
 
 // 函数组件02
@@ -13,24 +11,12 @@ function FunctionComponent(props) {
   )
 }
 
-// 类组件03
-class ClassComponent extends Component {
-  render() {
-    return (
-      <div className="border">
-        <p>{this.props.name}</p>
-      </div>
-    )
-  }
-}
-
 const jsx = (
   <section className="border">
     <h1>慢慢慢</h1>
     <h1>全栈</h1>
     <a href="https://www.kaikeba.com">kkb</a>
-    <FunctionComponent name="函数组件"/>
-    <ClassComponent name="类组件"/>
+    <FunctionComponent></FunctionComponent>
   </section>
 );
 

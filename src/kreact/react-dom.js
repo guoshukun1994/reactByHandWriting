@@ -5,6 +5,7 @@
 
 // type 原生标签 string
 //      文本节点 没有type
+//      函数组件 函数
 // props 属性 如 className 、 href、 id、 children 等
 function render(vnode, container) {
     console.log('vnode', vnode);    // sy-log
@@ -33,6 +34,10 @@ function createNode(vnode) {
     }else if(isStringOrNumber(vnode)){
         // 文本标签节点
         node = updateTextComponent(vnode);
+    }else if(typeof type === 'function') {
+        node = type.prototype.isReactComponent 
+                ? updateClassComponent(vnode) 
+                : updateFunctionComponent(vnode)
     }
 
     return node;
@@ -41,7 +46,7 @@ function createNode(vnode) {
 function updateNode(node, nextVal) {
     Object.keys(nextVal)
         .filter(k => {
-           console.log('filter',k);
+        //    console.log('filter',k);
            return k !== 'children';
         })
         .forEach((k) => {
@@ -60,6 +65,27 @@ function updateHostComponent(vnode) {
 
 function updateTextComponent(vnode) {
     const node = document.createTextNode(vnode);
+    return node;
+}
+
+// 返回node节点
+function updateFunctionComponent(vnode) {
+    const { type, props } = vnode;
+    console.log('Functionvnode',vnode);
+    const child = type(props);
+    const node = createNode(child)
+    return node;
+}
+
+// 返回node
+function updateClassComponent(vnode) {
+    const { type, props } = vnode;
+    console.log('Classvnode',vnode);
+
+    const instance = new type(props)
+    const child = instance.render()
+    // vnode -node
+    const node = createNode(child)
     return node;
 }
 

@@ -15,4 +15,5 @@ code {
 .border {
   width: 100px;
   border: 1px solid red;
+  margin: 10px;
 }

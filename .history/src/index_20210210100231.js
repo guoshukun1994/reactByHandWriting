@@ -1,7 +1,6 @@
 // import ReactDOM from 'react-dom';
-// import React, { Component } from 'react';   // 类组件需要用到
+import React, { Component } from 'react';   // 类组件需要用到
 import ReactDOM from './kreact/react-dom';
-import Component from './kreact/Component';
 import './index.css';
 
 // 函数组件02
@@ -18,7 +17,7 @@ class ClassComponent extends Component {
   render() {
     return (
       <div className="border">
-        <p>{this.props.name}</p>
+        <p>{props.name}</p>
       </div>
     )
   }
