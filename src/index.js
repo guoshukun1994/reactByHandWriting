@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
+import ReactDOM from './kreact/react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const jsx = (
+  <section className="border">
+    <h1>慢慢慢</h1>
+    <h1>全栈</h1>
+    <a href="https://www.kaikeba.com">kkb</a>
+  </section>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(jsx, document.getElementById("root"));
+
+
+// 原生标签节点，比如div、a等
+// 文本节点
+// 函数组件
+// 类组件
+// Fragment
